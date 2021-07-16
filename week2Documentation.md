@@ -206,7 +206,7 @@ mkValidator _ r _
 // and also replace with this:
 type GiftSchema = 
             Endpoint "give" Integer 
-        .\/ Endpoint "grab" ()
+        .\/ Endpoint "grab" Integer
 ```
 
 We give an arbitrary value at Wallet 2 grab Value like: 100, in order to cause failure of the validation script.
