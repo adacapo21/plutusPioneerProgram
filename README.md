@@ -23,6 +23,7 @@ Some **useful links** that you can check, are listed below:
 **Lectures**: 
 - Week 1: https://www.youtube.com/watch?v=_zr3W8cgzIQ&t=2210s&ab_channel=LarsBr%C3%BCnjes
 - Week 2: https://www.youtube.com/watch?v=sN3BIa3GAOc&ab_channel=LarsBr%C3%BCnjes
+- Week 3: https://www.youtube.com/watch?v=6_rfCCY9_gY&t=52s&ab_channel=LarsBr%C3%BCnjes
 
 **Linkedin** :
 - https://www.linkedin.com/in/angelos-dionysios-kappos-4b668140/
