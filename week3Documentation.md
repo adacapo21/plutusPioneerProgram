@@ -1,9 +1,13 @@
 #PLUTUS PIONEER PROGRAM
+
 ##Documentation Week 3
+
 ##Creator: Kappos Angelos
+
 ##Credits to: Sapiopool Cardano Community
 
-##Contents*
+##Contents
+
 ##Topics covered:
 - **Set up playground for Week 3**
 - **Script context.**
