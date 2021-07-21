@@ -278,7 +278,7 @@ mkValidator p () () ctx = traceIfFalse "beneficiary's signature missing" signedB
 ```
 **Validator Haskell Template**
 
-In this scenario, since the `mkValidator` now accepts paramiters as its input we have to change validator template. Additionally, at compile time we don't know what is the value of `p`, so it is not possible to compile them alltoghether. One way around is to use the `PlutusTx.applyCode` function and compile both the `p` and `mkValidator` objects separatley, and at the end, combine them alltogether.
+In this scenario, since the `mkValidator` now accepts parameters as its input, we have to change the validator template. Additionally, we don't know the value of `p` at compile time, so it is impossible to compile them all together. One way around is to use the `PlutusTx.applyCode` function and compile both the `p` and `mkValidator` objects separately, and at the end, combine them all together.
 
 ```
 typedValidator :: VestingParam -> Scripts.TypedValidator Vesting
