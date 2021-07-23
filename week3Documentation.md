@@ -1,14 +1,14 @@
-#PLUTUS PIONEER PROGRAM
+# PLUTUS PIONEER PROGRAM
 
-##Documentation Week 3
+## Documentation Week 3
 
-##Creator: Kappos Angelos
+## Creator: Kappos Angelos
 
-##Credits to: Sapiopool Cardano Community
+## Credits to: Sapiopool Cardano Community
 
-##Contents
+## Contents
 
-##Topics covered:
+## Topics covered:
 - **Set up playground for Week 3**
 - **Script context.**
 - **Time handling.**

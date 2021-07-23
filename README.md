@@ -1,7 +1,7 @@
-**Plutus Pioneer Program**
+# **Plutus Pioneer Program**
 
-**Creator: [Kappos Angelos](https://www.linkedin.com/in/angelos-dionysios-kappos-4b668140/)**
-
+## **Creator: [Kappos Angelos](https://www.linkedin.com/in/angelos-dionysios-kappos-4b668140/)**
+### Credits to: [Sapiopool Cardano Community](https://sapiopool.com/) && [Discord Sapiopool](https://discord.com/invite/HRK9gGE9ax)
 **This project/repository is implemented for educational purposes and it is an unoffocial repo for everything related to the Plutus Pioneer Program.**
 
 The **main repositories** of the Plutus Pioneer Program can be found here:
@@ -77,16 +77,17 @@ cabal build
 
 Some **LINKS** that you can check, are listed below:
 
-**Video Lectures**:
+##**Video Lectures**:
 
 - [Week 1](https://www.youtube.com/watch?v=_zr3W8cgzIQ&t=2210s&ab_channel=LarsBr%C3%BCnjes)
 - [Week 2](https://www.youtube.com/watch?v=sN3BIa3GAOc&ab_channel=LarsBr%C3%BCnjes)
 - [Week 3](https://www.youtube.com/watch?v=6_rfCCY9_gY&t=52s&ab_channel=LarsBr%C3%BCnjes)
+- [Week 4](https://www.youtube.com/watch?v=g4lvA14I-Jg&t=2422s&ab_channel=LarsBr%C3%BCnjes)
 
-**Linkedin** :
+##**Linkedin** :
 [Kappos Angelos](https://www.linkedin.com/in/angelos-dionysios-kappos-4b668140/)
 
-**Twitter accounts:**
+## **Twitter accounts:**
 - [angelokappos](https://twitter.com/angelokappos)
 - [sapiopool](https://twitter.com/sapiopool)
 
