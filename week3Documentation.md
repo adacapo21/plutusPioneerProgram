@@ -220,23 +220,23 @@ Next problem is the Deadline
 > slotToBeginPOSIXTime def 10
 > slotToBeginPOSIXTime def 20
 ```
-Where we take the POSIXTime for 10 && 20 where we copy the values of each case and we paste to playground in order to check our scenario
-![](pictures/week3/2.png)
-10: 1596059101000,
-20: 1596059111000,
-30: 1596059121000,
-Copy the hashes and deadline slots from Wallet 2 -picture below-, paste it and rerun it.
+Where we take the POSIXTime for 10 && 20 where we copy the values of each case and we paste to playground in order to check our scenario.  
+![](pictures/week3/2.png)  
+10: 1596059101000,  
+20: 1596059111000,  
+30: 1596059121000  
+Copy the hashes and deadline slots from Wallet 2 -picture below-, paste it and rerun it.  
 ![](pictures/week3/3.png)
 What we see:
-Slot 0: Genesis transaction (see above picture)
+Slot 0: Genesis transaction (see above picture)  
 ![](pictures/week3/4.png)
-Slot 1: Wallet 1 sends to wallet 2 10000000 Lovelace, the signature && It also pays lovelace fee 10
+Slot 1: Wallet 1 sends to wallet 2 10000000 Lovelace, the signature && It also pays lovelace fee 10  
 ![](pictures/week3/5.png)
-Slot 10: Wallet 1 gives to wallet 3 at this time the same amount of Lovelaces.
+Slot 10: Wallet 1 gives to wallet 3 at this time the same amount of Lovelaces.  
 ![](pictures/week3/6.png)
-Slot 30:
+Slot 30:  
 ![](pictures/week3/7.png)
-Slot 31:
+Slot 31:  
 ![](pictures/week3/8.png)
 
 **AND THE FINAL RESULTS:**
@@ -248,7 +248,7 @@ Running the same script with different deadline, we get the message:
 with the results shown below, are different from the previous example because we changed the deadline we check:
 ![](pictures/week3/12.png)
 
-##PARAMETRISED
+## PARAMETRISED
 Is a parametrized Vesting script. With optimisation of the previous code but similar logic.
 Datum
 We parametrise the script of Vesting
@@ -276,6 +276,25 @@ mkValidator p () () ctx = traceIfFalse "beneficiary's signature missing" signedB
     deadlineReached :: Bool 
     deadlineReached = contains (from $ deadline p) $ txInfoValidRange info
 ```
+**Validator Haskell Template**
+
+In this scenario, since the `mkValidator` now accepts parameters as its input, we have to change the validator template. Additionally, we don't know the value of `p` at compile time, so it is impossible to compile them all together. One way around is to use the `PlutusTx.applyCode` function and compile both the `p` and `mkValidator` objects separately, and at the end, combine them all together.
+
+```
+typedValidator :: VestingParam -> Scripts.TypedValidator Vesting
+typedValidator p = Scripts.mkTypedValidator @Vesting
+    ($$(PlutusTx.compile [|| mkValidator ||]) `PlutusTx.applyCode` PlutusTx.liftCode p)
+    $$(PlutusTx.compile [|| wrap ||])
+  where
+    wrap = Scripts.wrapValidator @() @()
+```
+And the `validator` function applies `typedValidator` to its input argument using function compositions:
+
+```
+validator :: VestingParam -> Validator
+validator = Scripts.validatorScript . typedValidator
+```
+
 **Wallet Part of the script**
 ```
 data GiveParams = GiveParams -- WALLET PART of chain 
@@ -346,8 +365,7 @@ if now < d
 ![](pictures/week3/14.png)
 ![](pictures/week3/15.png)
 
-##Homework
-
+## Homework1:
 The beneficiary of Wallet 1 will be Wallet 2, and the beneficiary of Wallet 2 will be Wallet 1.
 - Wallet 1 address: 21fe31dfa154a261626bf854046fd2271b7bed4b6abe45aa58877ef47f9721b9
 
