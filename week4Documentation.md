@@ -110,7 +110,7 @@ Main > getLine >>= putStrLn
 Main > :t return
 Main > return "Haskell" :: IO String
 ```
-![](pictures/week4/1.png)
+![](pictures/week4/1.PNG)
 
 If we go back to app/hello.hs  -- we can run an IO action
 ```
@@ -145,7 +145,7 @@ Main > foo "1" "2" "3"
 Main > foo "" "2" "3"
 Main > bindMaybe (readMaybe "42" :: Maybe Int) (\x -> bindMaybe (readMaybe "5" :: Maybe Int) (\y -> Just (y + x)))
 ```
-![](pictures/week4/2.png)
+![](pictures/week4/2.PNG)
 
 ## **EITHER**
 Either takes two parameters, a and b. Like Maybe it has two constructors, but unlike Maybe both take a value. It can Either be an a or a b. The two constructors are Left and Right. The logic inside this file is similar with the previous about Maybe.
@@ -158,7 +158,7 @@ Main > foo "1" "2" "3"
 Main > foo "xyz" "2" "3"
 ```
 
-![](pictures/week4/3.png)
+![](pictures/week4/3.PNG)
 
 ## **WRITER**
 
@@ -185,7 +185,7 @@ Main > Week04.Writer.foo'' (number 1) (number 2) (number 3)
 Main > 
 Main >
 ```
-![](pictures/week4/4.png)
+![](pictures/week4/4.PNG)
 
 We no longer need to do the pattern matching to extract the messages. We don’t have to explicitly combine the log messages, where we could make a mistake and forget one, or get the order wrong. Instead, we abstract all that away and can just concentrate on the business logic.
 
@@ -248,7 +248,7 @@ threeInts' mx my mz = do
     return s
 ```
 
-![](pictures/week4/5.png)
+![](pictures/week4/5.PNG)
 
 
 ## PLUTUS MONADS
@@ -278,7 +278,7 @@ Prelude Week04.Contract> runEmulatorTrace (EmulatorConfig $ Left defaultDist) $ 
 Prelude Week04.Contract> runEmulatorTraceIO $ return ()      
 Prelude Week04.Contract>
 ```
-![](pictures/week4/6.png)
+![](pictures/week4/6.PNG)
 
 In an new terminal, again in **REPL** we follow the below logic:
 ```
@@ -292,33 +292,33 @@ Prelude Week04.Contract> runEmulatorTrace def def $ return () -- we get a lot of
 Prelude Week04.Contract> :t runEmulatorTraceIO
 Prelude Week04.Contract> runEmulatorTraceIO $ return ()
 ```
-![](pictures/week4/7.png)
+![](pictures/week4/7.PNG)
 
 With the last command in REPL, we see a much more manageable, concise output. Nothing happens, but we see the Genesis transaction and then the final balances for each wallet.
 
 ## Testing Trace.hs
-![](pictures/week4/8.png)
+![](pictures/week4/8.PNG)
 ## Contract.hs
 **Running test1:**
-![](pictures/week4/5.png)
+![](pictures/week4/5.PNG)
 **testing test2**
 
-![](pictures/week4/12.png)
+![](pictures/week4/12.PNG)
 
 **testing test3**
-![](pictures/week4/11.png)
+![](pictures/week4/11.PNG)
 
 **testing test4**
-![](pictures/week4/13.png)
+![](pictures/week4/13.PNG)
 
 Using this mechanism, it is possible to pass information from the contract running in the wallet to the outside world. Using endpoints we can pass information into a contract. And using the tell mechanism we can get information out of the wallet.
 
 ## Homework - Solution Results
 
 ## payTest1
-![](pictures/week4/14.png)
+![](pictures/week4/14.PNG)
 ## payTest2
-![](pictures/week4/15.png)
+![](pictures/week4/15.PNG)
 
 The **official lecture** can be found here [Lecture 4](https://www.youtube.com/watch?v=g4lvA14I-Jg&t=2422s&ab_channel=LarsBr%C3%BCnjes) of Lars Brünjes on YouTube.
 
