@@ -80,6 +80,7 @@ cabal build
 ## IO Actions
 
 ![](pictures/week4/1a.png)
+
 In a new terminal and in folder  plutus-pioneer-program/code/week04 after you run cabal update/build (read README.md for more info) you can see the in REPL some ways to create IO actions:
 
 
@@ -300,15 +301,19 @@ With the last command in REPL, we see a much more manageable, concise output. No
 ![](pictures/week4/8.PNG)
 ## Contract.hs
 **Running test1:**
+
 ![](pictures/week4/5.PNG)
+
 **testing test2**
 
 ![](pictures/week4/12.PNG)
 
 **testing test3**
+
 ![](pictures/week4/11.PNG)
 
 **testing test4**
+
 ![](pictures/week4/13.PNG)
 
 Using this mechanism, it is possible to pass information from the contract running in the wallet to the outside world. Using endpoints we can pass information into a contract. And using the tell mechanism we can get information out of the wallet.
@@ -317,6 +322,7 @@ Using this mechanism, it is possible to pass information from the contract runni
 
 ## payTest1
 ![](pictures/week4/14.PNG)
+
 ## payTest2
 ![](pictures/week4/15.PNG)
 
