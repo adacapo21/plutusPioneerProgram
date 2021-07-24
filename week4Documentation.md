@@ -321,10 +321,10 @@ Using this mechanism, it is possible to pass information from the contract runni
 ## Homework - Solution Results
 
 ## payTest1
-![](pictures/week4/14.PNG)
+![](pictures/week4/14a.PNG)
 
 ## payTest2
-![](pictures/week4/15.PNG)
+![](pictures/week4/16.PNG)
 
 The **official lecture** can be found here [Lecture 4](https://www.youtube.com/watch?v=g4lvA14I-Jg&t=2422s&ab_channel=LarsBr%C3%BCnjes) of Lars Brünjes on YouTube.
 
