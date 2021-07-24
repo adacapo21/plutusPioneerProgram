@@ -32,12 +32,19 @@ payContract = do
     void $ submitTx tx
     payContract
 
+payContract2 :: Contract () PaySchema Text ()
+payContract2 = do
+    pp <- endpoint @"pay"
+    let tx = mustPayToPubKey (ppRecipient pp) $ lovelaceValueOf $ ppLovelace pp
+    handleError (\err -> Contract.logInfo $ "caught error: " ++ unpack err) $ void $ submitTx tx
+    payContract
+
 -- A trace that invokes the pay endpoint of payContract on Wallet 1 twice, each time with Wallet 2 as
 -- recipient, but with amounts given by the two arguments. There should be a delay of one slot
 -- after each endpoint call.
 payTrace :: Integer -> Integer -> EmulatorTrace ()
 payTrace x y = do
-    h <- activateContractWallet (Wallet 1) payContract
+    h <- activateContractWallet (Wallet 1) payContract2
     callEndpoint @"pay" h $ PayParams
         { ppRecipient = pubKeyHash $ walletPubKey $ Wallet 2
         , ppLovelace  = x
