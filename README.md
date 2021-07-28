@@ -13,7 +13,10 @@ The **main repositories** of the Plutus Pioneer Program can be found here:
 - Code with explanatory comments,
 - Solutions of Homeworks
 - Practices, 
-- Techincal Documentation for each lecture,  
+- Techincal Documentation for each lecture,
+- Technical Papers and external Links to useful sources
+- Further resources for learning (Haskell-Plutus)
+
 All this knowledge comes after following the Plutus Pioneer Program of IOHK.
 Every Week, the next series of the Program will be added to the repository.
 Don't hesitate to contribute if you need is required.
