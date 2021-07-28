@@ -84,39 +84,37 @@ Some **LINKS** that you can check, are listed below:
 - [Week 3](https://www.youtube.com/watch?v=6_rfCCY9_gY&t=52s&ab_channel=LarsBr%C3%BCnjes)
 - [Week 4](https://www.youtube.com/watch?v=g4lvA14I-Jg&t=2422s&ab_channel=LarsBr%C3%BCnjes)
 
-##**Extra Reads**
-[Extended UTXO Model](https://iohk.io/en/research/library/papers/the-extended-utxo-model/)
+## **Extra Reads - Useful Papers**
 
-[UTxO- vs account-based smart contract blockchain programming paradigms ](https://arxiv.org/pdf/2003.14271.pdf)
+- [Extended UTXO Model](https://iohk.io/en/research/library/papers/the-extended-utxo-model/)
 
-[Native Custom Tokens in the Extended UTXO Model](https://files.zotero.net/eyJleHBpcmVzIjoxNjI3NDc1NTI4LCJoYXNoIjoiMDBmMTM0NGZkYTg2ZTBhOWJkZWI4ZDhhYjIzZjIzYzAiLCJjb250ZW50VHlwZSI6ImFwcGxpY2F0aW9uXC9wZGYiLCJjaGFyc2V0IjoiIiwiZmlsZW5hbWUiOiJDaGFrcmF2YXJ0eSBldCBhbC4gLSAyMDIwIC0gTmF0aXZlIEN1c3RvbSBUb2tlbnMgaW4gdGhlIEV4dGVuZGVkIFVUWE8gTW9kZWwucGRmIn0%3D/bc922137cb48f5438f8bbaf38f275e704e1541622d3db462bdfd027afcee6efe/Chakravarty%20et%20al.%20-%202020%20-%20Native%20Custom%20Tokens%20in%20the%20Extended%20UTXO%20Model.pdf)
+- [UTxO- vs account-based smart contract blockchain programming paradigms ](https://arxiv.org/pdf/2003.14271.pdf)
 
-[UTxO- vs account-based smart contract
+- [Native Custom Tokens in the Extended UTXO Model](https://files.zotero.net/eyJleHBpcmVzIjoxNjI3NDc1NTI4LCJoYXNoIjoiMDBmMTM0NGZkYTg2ZTBhOWJkZWI4ZDhhYjIzZjIzYzAiLCJjb250ZW50VHlwZSI6ImFwcGxpY2F0aW9uXC9wZGYiLCJjaGFyc2V0IjoiIiwiZmlsZW5hbWUiOiJDaGFrcmF2YXJ0eSBldCBhbC4gLSAyMDIwIC0gTmF0aXZlIEN1c3RvbSBUb2tlbnMgaW4gdGhlIEV4dGVuZGVkIFVUWE8gTW9kZWwucGRmIn0%3D/bc922137cb48f5438f8bbaf38f275e704e1541622d3db462bdfd027afcee6efe/Chakravarty%20et%20al.%20-%202020%20-%20Native%20Custom%20Tokens%20in%20the%20Extended%20UTXO%20Model.pdf)
+
+- [UTxO- vs account-based smart contract
 blockchain programming paradigms](https://arxiv.org/pdf/2003.14271.pdf)
 
-[The Architecture of Decentralised Finance Platforms: A New Open Finance Paradigm](https://iohk.io/en/research/library/papers/the-architecture-of-decentralised-finance-platformsa-new-open-finance-paradigm/)
+- [The Architecture of Decentralised Finance Platforms: A New Open Finance Paradigm](https://iohk.io/en/research/library/papers/the-architecture-of-decentralised-finance-platformsa-new-open-finance-paradigm/)
 
-[Smart Contract Derivatives](https://eprint.iacr.org/2020/138.pdf)
+- [Smart Contract Derivatives](https://eprint.iacr.org/2020/138.pdf)
 
-[Marlowe: implementing and analysing financial contracts on blockchain](https://files.zotero.net/eyJleHBpcmVzIjoxNjI3NDc1OTE2LCJoYXNoIjoiM2IzNzJmMzE2Yjc1M2Q0NzU4YzMxZDVhYWE0MTg3OGMiLCJjb250ZW50VHlwZSI6ImFwcGxpY2F0aW9uXC9wZGYiLCJjaGFyc2V0IjoiIiwiZmlsZW5hbWUiOiJTZWlqYXMgZXQgYWwuIC0gTWFybG93ZSBpbXBsZW1lbnRpbmcgYW5kIGFuYWx5c2luZyBmaW5hbmNpYWwgY29udC5wZGYifQ%3D%3D/316d015db70acade1a95d980cd88d9412242accbe9dffa62f13cd2673e067b6e/Seijas%20et%20al.%20-%20Marlowe%20implementing%20and%20analysing%20financial%20cont.pdf)
+- [Marlowe: implementing and analysing financial contracts on blockchain](https://files.zotero.net/eyJleHBpcmVzIjoxNjI3NDc1OTE2LCJoYXNoIjoiM2IzNzJmMzE2Yjc1M2Q0NzU4YzMxZDVhYWE0MTg3OGMiLCJjb250ZW50VHlwZSI6ImFwcGxpY2F0aW9uXC9wZGYiLCJjaGFyc2V0IjoiIiwiZmlsZW5hbWUiOiJTZWlqYXMgZXQgYWwuIC0gTWFybG93ZSBpbXBsZW1lbnRpbmcgYW5kIGFuYWx5c2luZyBmaW5hbmNpYWwgY29udC5wZGYifQ%3D%3D/316d015db70acade1a95d980cd88d9412242accbe9dffa62f13cd2673e067b6e/Seijas%20et%20al.%20-%20Marlowe%20implementing%20and%20analysing%20financial%20cont.pdf)
 
-[Functional Blockchain Contracts](https://files.zotero.net/eyJleHBpcmVzIjoxNjI3NDc1OTU2LCJoYXNoIjoiZWQ1YTU5MGZmYWFhYzQ2Y2VjNTFmNjlmZTQ0NjgzMjIiLCJjb250ZW50VHlwZSI6ImFwcGxpY2F0aW9uXC9wZGYiLCJjaGFyc2V0IjoiIiwiZmlsZW5hbWUiOiJDaGFrcmF2YXJ0eSBldCBhbC4gLSAyMDE5IC0gRnVuY3Rpb25hbCBCbG9ja2NoYWluIENvbnRyYWN0cy5wZGYifQ%3D%3D/46c4f06af19f34d11d25d4cce757d9034bb5dc8b5149252584901ad7f26215d9/Chakravarty%20et%20al.%20-%202019%20-%20Functional%20Blockchain%20Contracts.pdf)
+- [Functional Blockchain Contracts](https://files.zotero.net/eyJleHBpcmVzIjoxNjI3NDc1OTU2LCJoYXNoIjoiZWQ1YTU5MGZmYWFhYzQ2Y2VjNTFmNjlmZTQ0NjgzMjIiLCJjb250ZW50VHlwZSI6ImFwcGxpY2F0aW9uXC9wZGYiLCJjaGFyc2V0IjoiIiwiZmlsZW5hbWUiOiJDaGFrcmF2YXJ0eSBldCBhbC4gLSAyMDE5IC0gRnVuY3Rpb25hbCBCbG9ja2NoYWluIENvbnRyYWN0cy5wZGYifQ%3D%3D/46c4f06af19f34d11d25d4cce757d9034bb5dc8b5149252584901ad7f26215d9/Chakravarty%20et%20al.%20-%202019%20-%20Functional%20Blockchain%20Contracts.pdf)
 
-[Marlowe: financial contracts on blockchain](https://files.zotero.net/eyJleHBpcmVzIjoxNjI3NDc1OTk0LCJoYXNoIjoiM2JlM2Q4OWI5ZTE1YTIwMmYwZDY0Zjk2NmZmYTgzNTgiLCJjb250ZW50VHlwZSI6ImFwcGxpY2F0aW9uXC9wZGYiLCJjaGFyc2V0IjoiIiwiZmlsZW5hbWUiOiJTZWlqYXMgYW5kIFRob21wc29uIC0gTWFybG93ZSBmaW5hbmNpYWwgY29udHJhY3RzIG9uIGJsb2NrY2hhaW4ucGRmIn0%3D/62b91acae6e45230591758711825545e8d6756d7630e2c2e18b7e9dcf6c5bc6c/Seijas%20and%20Thompson%20-%20Marlowe%20financial%20contracts%20on%20blockchain.pdf)
+- [Marlowe: financial contracts on blockchain](https://files.zotero.net/eyJleHBpcmVzIjoxNjI3NDc1OTk0LCJoYXNoIjoiM2JlM2Q4OWI5ZTE1YTIwMmYwZDY0Zjk2NmZmYTgzNTgiLCJjb250ZW50VHlwZSI6ImFwcGxpY2F0aW9uXC9wZGYiLCJjaGFyc2V0IjoiIiwiZmlsZW5hbWUiOiJTZWlqYXMgYW5kIFRob21wc29uIC0gTWFybG93ZSBmaW5hbmNpYWwgY29udHJhY3RzIG9uIGJsb2NrY2hhaW4ucGRmIn0%3D/62b91acae6e45230591758711825545e8d6756d7630e2c2e18b7e9dcf6c5bc6c/Seijas%20and%20Thompson%20-%20Marlowe%20financial%20contracts%20on%20blockchain.pdf)
 
-[]()
+- [Plutus: what you need to know, by Lars](https://iohk.io/en/blog/posts/2021/04/13/plutus-what-you-need-to-know/)
 
-[Plutus: what you need to know, by Lars](https://iohk.io/en/blog/posts/2021/04/13/plutus-what-you-need-to-know/)
+- [Plutus Lectures Notes](https://plutus-pioneer-program.readthedocs.io/en/latest/)
 
-[Plutus Lectures Notes](https://plutus-pioneer-program.readthedocs.io/en/latest/)
+- [Plutus Community Documentation](https://docs.plutus-community.com/)
 
-[JBarCode - Learn Haskell for Plutus](https://www.youtube.com/watch?v=5b-YG558ft8&list=PLw2QsPIp2pxtkNQRvnOlV2xFkrQ8mPqAb&index=1&t=5666s&ab_channel=JBarCode)
+- [Smart Contracts Architecture](https://testnets.cardano.org/en/virtual-machines/kevm/about/iele_vm_architecture/)
 
-[Plutus Community Documentation](https://docs.plutus-community.com/)
+- [Cardano Developers Reddit](https://www.reddit.com/r/CardanoDevelopers/)
 
-[Smart Contracts Architecture](https://testnets.cardano.org/en/virtual-machines/kevm/about/iele_vm_architecture/)
-
-[Cardano Developers Reddit](https://www.reddit.com/r/CardanoDevelopers/)
 ##**Linkedin** :
 [Kappos Angelos](https://www.linkedin.com/in/angelos-dionysios-kappos-4b668140/)
 
