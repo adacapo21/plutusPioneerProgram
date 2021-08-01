@@ -195,7 +195,7 @@ Prelude Week05.Free> test
 
 ###Testing with EmulatorTrace
 
-![](pictures/week5/3a.png)
+![](pictures/week5/3A.png)
 
 
 
@@ -207,11 +207,11 @@ Go to PLUTUS PLAYGROUND and Checking the above Minting Policy
 - Wallet 1 burns 222 ABC tokens.
 - Finally, we wait for 1 slot at the end.
 
-![](pictures/week5/3.png)
-![](pictures/week5/4.png)
-![](pictures/week5/5.png)
-![](pictures/week5/6.png)
-![](pictures/week5/7.png)
+![](pictures/week5/3.PNG)
+![](pictures/week5/4.PNG)
+![](pictures/week5/5.PNG)
+![](pictures/week5/6.PNG)
+![](pictures/week5/7.PNG)
 
 
 
@@ -233,7 +233,7 @@ In REPL:
 Prelude Week05.Signed> :l src/Week05/Signed.hs
 Prelude Week05.Signed> test
 ```
-![](pictures/week5/8.png)
+![](pictures/week5/8.PNG)
 
 How validation works?
 When we don't have a public key address, but a script address, and a UTxO that sits at that address, then for any transaction that tries to consume that UTxO, a validation script is run.
@@ -285,7 +285,7 @@ So, to create an NFT,we are going to provide :
 
 test NFT.hsin REPL:
 
-![](pictures/week5/9.png)
+![](pictures/week5/9.PNG)
 
 **EXTRA NOTES**
 
@@ -301,10 +301,10 @@ By making a minting policy that takes a public address as a parameter, and then 
 ##HOMEWORK - SOLUTIONS
 
 ###Solution 1
-![](pictures/week5/10.png)
+![](pictures/week5/10.PNG)
 
 ###Solution 2
 
-![](pictures/week5/11.png)
+![](pictures/week5/11.PNG)
 
 Enjoy!
