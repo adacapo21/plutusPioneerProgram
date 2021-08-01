@@ -86,7 +86,15 @@ Some **LINKS** that you can check, are listed below:
 - [Week 2](https://www.youtube.com/watch?v=sN3BIa3GAOc&ab_channel=LarsBr%C3%BCnjes)
 - [Week 3](https://www.youtube.com/watch?v=6_rfCCY9_gY&t=52s&ab_channel=LarsBr%C3%BCnjes)
 - [Week 4](https://www.youtube.com/watch?v=g4lvA14I-Jg&t=2422s&ab_channel=LarsBr%C3%BCnjes)
+- [Week 5](https://www.youtube.com/watch?v=SsaVjSsPPcg&t=2s&ab_channel=LarsBr%C3%BCnjes)
+- [Week 6](https://www.youtube.com/watch?v=24SHPHEc3zo&t=2s&ab_channel=LarsBr%C3%BCnjes)
 
+##**Q&A:**
+- [Plutus Pioneers second cohort: Q and A with Lars #001](https://zoom.us/rec/share/QU7jcp8S0A-xlmXMIKlua5GoTpL0YwofDlnhSmzgZh1PeFSKqSn9YtzqIGmb6TvC.qZiLZ3thyTOy8dQ0) - Access Passcode: WbB7MU$C
+- [Plutus Pioneers second cohort: Q and A with Lars #002](https://zoom.us/rec/share/mfAfBcg8LfGstgdkvXYyP9BVUDiBzm1O_ED9QaTobbcuPzOXOZzGpGBndhr2CauU.bgV5nicKWogoT3Kj) - Access Passcode: WbB7MU$C
+- [Plutus Pioneers: Q and A with Lars #003](https://zoom.us/rec/share/7KKN1jsJIEe7hID4nxqo5cc59DQgucNTcXi7evD81cIsanLtJJfz4ymFYj7PW1PE.YajSv6SIKsCBRHKl) - Access Passcode: WbB7MU$C
+- [Plutus Pioneers: Q and A with Lars #004](https://zoom.us/rec/share/Gn20cMXHJbmdXG6R0PncZfs2feUuxP9KJjFGQ5oecCu-dvi2KSb-asX_LVSaKRHT.S2R1Eo2ulCeTWDUt
+  ) Access Passcode: WbB7MU$C
 ## **Extra Reads - Useful Papers**
 
 - [Extended UTXO Model](https://iohk.io/en/research/library/papers/the-extended-utxo-model/)
