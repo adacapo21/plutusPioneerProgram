@@ -18,23 +18,23 @@ import Text.Regex.TDFA
 
 main :: IO ()
 main = do
-    uuid <- read <$> readFile "oracle.cid"
-    putStrLn $ "oracle contract instance id: " ++ show uuid
-    go uuid Nothing
-  where
+    uuid <- read <$> readFile "oracle.cid"                          -- oracle.cid file to get the oracle instance ID
+    putStrLn $ "oracle contract instance id: " ++ show uuid         --
+    go uuid Nothing                                                 -- recursive function go which looks up the current exchange rate on CoinMarketCap
+  where                                                             --
     go :: UUID -> Maybe Integer -> IO a
     go uuid m = do
         x <- getExchangeRate
         let y = Just x
         when (m /= y) $
-            updateOracle uuid x
-        threadDelay 5_000_000
+            updateOracle uuid x                                     -- if current exchange Has changed, updateOracle endpoind is called.
+        threadDelay 5_000_000                                       -- waits 5 sec (blocks on cardano are appeared in 20 sec, so 5 sec are short)
         go uuid y
 
-updateOracle :: UUID -> Integer -> IO ()
+updateOracle :: UUID -> Integer -> IO ()                            -- updateOracle: Prepares a POST request
 updateOracle uuid x = runReq defaultHttpConfig $ do
     v <- req
-        POST
+        POST                                                         --  usnig oracle instance ID and a JSON
         (http "127.0.0.1" /: "api"  /: "new" /: "contract" /: "instance" /: pack (show uuid) /: "endpoint" /: "update")
         (ReqBodyJson x)
         (Proxy :: Proxy (JsonResponse ()))
@@ -43,6 +43,8 @@ updateOracle uuid x = runReq defaultHttpConfig $ do
         then "updated oracle to " ++ show x
         else "error updating oracle"
 
+-- quick and dirty way of getting the exchange rate from CoinMarketCap.
+-- TO NOT BE USED AS PRODUCTION CODE
 getExchangeRate :: IO Integer
 getExchangeRate = runReq defaultHttpConfig $ do
     v <- req

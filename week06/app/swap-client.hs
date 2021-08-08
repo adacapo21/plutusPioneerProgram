@@ -51,6 +51,9 @@ main = do
 data Command = Offer Integer | Retrieve | Use | Funds
     deriving (Show, Read, Eq, Ord)
 
+-- getFunds function needs to get information out of the server.
+-- For this it needs to make two requests.
+-- The second request is to read the state that was told by the first call.
 getFunds :: UUID -> IO ()
 getFunds uuid = handle h $ runReq defaultHttpConfig $ do
     v <- req
