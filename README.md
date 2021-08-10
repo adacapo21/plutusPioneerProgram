@@ -1,7 +1,7 @@
 # **Plutus Pioneer Program**
 
-## **Creator: [Kappos Angelos](https://www.linkedin.com/in/angelos-dionysios-kappos-4b668140/)**
-### Credits to: [Sapiopool Cardano Community](https://sapiopool.com/) && [Discord Sapiopool](https://discord.com/invite/HRK9gGE9ax)
+### **Creator: [Kappos Angelos](https://www.linkedin.com/in/angelos-dionysios-kappos-4b668140/)**
+#### Credits to: [Sapiopool Cardano Community](https://sapiopool.com/) && [Discord Sapiopool](https://discord.com/invite/HRK9gGE9ax)
 **This project/repository is implemented for educational purposes and it is an unoffocial repo for everything related to the Plutus Pioneer Program.**
 
 The **main repositories** of the Plutus Pioneer Program can be found here:
@@ -98,8 +98,22 @@ Some **LINKS** that you can check, are listed below:
 - [Plutus Pioneers: Q and A with Lars #004](https://zoom.us/rec/share/Gn20cMXHJbmdXG6R0PncZfs2feUuxP9KJjFGQ5oecCu-dvi2KSb-asX_LVSaKRHT.S2R1Eo2ulCeTWDUt
   ) Access Passcode: WbB7MU$C
  - [Plutus Pioneers: Q and A with Lars #005](https://zoom.us/rec/share/4lASBU00my7lL5l0enCqZVWL7HBHJAI9x4_rJCZAoTaMz58c3C2lSgNTWF8tcB_E.owc7Yk9PGgGCH7c0) Access Passcode: WbB7MU$C  
-## Extra Reads - Useful Papers
 
+## Useful Links && Extra Repositiries
+- [Plutus Community Docs](https://docs.plutus-community.com/docs/lectures/Lecture6.html)
+- [Cardano Developer Portal](https://developers.cardano.org/?utm_source=Developers&utm_campaign=e6f14df50a-EMAIL_CAMPAIGN_2021_03_31_06_14_COPY_01&utm_medium=email&utm_term=0_c9c99d4ad3-e6f14df50a-77674502)
+- [Plutus Community Documentation](https://docs.plutus-community.com/)
+- [Smart Contracts Architecture](https://testnets.cardano.org/en/virtual-machines/kevm/about/iele_vm_architecture/)
+- [Cardano Stack Exchange](https://cardano.stackexchange.com/)
+- [Repository about Cardano Dev from @proyecto26](https://github.com/proyecto26/cardano-developer)
+- [Lectures Notes Cohort 1](https://plutus-pioneer-program.readthedocs.io/en/latest/index.html)
+- [Alonzo Walkthrough](https://plutus-pioneer-program.readthedocs.io/en/latest/alonzo.html)
+- [Plutus Repo from @mputz86](https://github.com/mputz86/plutus-personal-playground)
+- [Plutus Lectures Notes](https://plutus-pioneer-program.readthedocs.io/en/latest/)
+- [Cardano Developers Reddit](https://www.reddit.com/r/CardanoDevelopers/)
+
+## Extra Reads - Useful Papers
+- [Academic Papers](https://github.com/jonathondilworth/blockchain-notes/blob/main/Academic-Papers-List.md)
 - [Extended UTXO Model](https://iohk.io/en/research/library/papers/the-extended-utxo-model/)
 - [UTxO- vs account-based smart contract blockchain programming paradigms ](https://arxiv.org/pdf/2003.14271.pdf)
 - [Native Custom Tokens in the Extended UTXO Model](https://files.zotero.net/eyJleHBpcmVzIjoxNjI3NDc1NTI4LCJoYXNoIjoiMDBmMTM0NGZkYTg2ZTBhOWJkZWI4ZDhhYjIzZjIzYzAiLCJjb250ZW50VHlwZSI6ImFwcGxpY2F0aW9uXC9wZGYiLCJjaGFyc2V0IjoiIiwiZmlsZW5hbWUiOiJDaGFrcmF2YXJ0eSBldCBhbC4gLSAyMDIwIC0gTmF0aXZlIEN1c3RvbSBUb2tlbnMgaW4gdGhlIEV4dGVuZGVkIFVUWE8gTW9kZWwucGRmIn0%3D/bc922137cb48f5438f8bbaf38f275e704e1541622d3db462bdfd027afcee6efe/Chakravarty%20et%20al.%20-%202020%20-%20Native%20Custom%20Tokens%20in%20the%20Extended%20UTXO%20Model.pdf)
@@ -111,14 +125,11 @@ blockchain programming paradigms](https://arxiv.org/pdf/2003.14271.pdf)
 - [Functional Blockchain Contracts](https://files.zotero.net/eyJleHBpcmVzIjoxNjI3NDc1OTU2LCJoYXNoIjoiZWQ1YTU5MGZmYWFhYzQ2Y2VjNTFmNjlmZTQ0NjgzMjIiLCJjb250ZW50VHlwZSI6ImFwcGxpY2F0aW9uXC9wZGYiLCJjaGFyc2V0IjoiIiwiZmlsZW5hbWUiOiJDaGFrcmF2YXJ0eSBldCBhbC4gLSAyMDE5IC0gRnVuY3Rpb25hbCBCbG9ja2NoYWluIENvbnRyYWN0cy5wZGYifQ%3D%3D/46c4f06af19f34d11d25d4cce757d9034bb5dc8b5149252584901ad7f26215d9/Chakravarty%20et%20al.%20-%202019%20-%20Functional%20Blockchain%20Contracts.pdf)
 - [Marlowe: financial contracts on blockchain](https://files.zotero.net/eyJleHBpcmVzIjoxNjI3NDc1OTk0LCJoYXNoIjoiM2JlM2Q4OWI5ZTE1YTIwMmYwZDY0Zjk2NmZmYTgzNTgiLCJjb250ZW50VHlwZSI6ImFwcGxpY2F0aW9uXC9wZGYiLCJjaGFyc2V0IjoiIiwiZmlsZW5hbWUiOiJTZWlqYXMgYW5kIFRob21wc29uIC0gTWFybG93ZSBmaW5hbmNpYWwgY29udHJhY3RzIG9uIGJsb2NrY2hhaW4ucGRmIn0%3D/62b91acae6e45230591758711825545e8d6756d7630e2c2e18b7e9dcf6c5bc6c/Seijas%20and%20Thompson%20-%20Marlowe%20financial%20contracts%20on%20blockchain.pdf)
 - [Plutus: what you need to know, by Lars](https://iohk.io/en/blog/posts/2021/04/13/plutus-what-you-need-to-know/)
-- [Plutus Lectures Notes](https://plutus-pioneer-program.readthedocs.io/en/latest/)
-- [Plutus Community Documentation](https://docs.plutus-community.com/)
-- [Smart Contracts Architecture](https://testnets.cardano.org/en/virtual-machines/kevm/about/iele_vm_architecture/)
-- [Cardano Developers Reddit](https://www.reddit.com/r/CardanoDevelopers/)
 
-## Linkedin : [Kappos Angelos](https://www.linkedin.com/in/angelos-dionysios-kappos-4b668140/)
 
-## **Twitter accounts:**
+### Linkedin : [Kappos Angelos](https://www.linkedin.com/in/angelos-dionysios-kappos-4b668140/)
+
+### **Twitter accounts:**
 - [angelokappos](https://twitter.com/angelokappos)
 - [sapiopool](https://twitter.com/sapiopool)
 
