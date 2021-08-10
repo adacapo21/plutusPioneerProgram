@@ -100,7 +100,6 @@ Some **LINKS** that you can check, are listed below:
  - [Plutus Pioneers: Q and A with Lars #005](https://zoom.us/rec/share/4lASBU00my7lL5l0enCqZVWL7HBHJAI9x4_rJCZAoTaMz58c3C2lSgNTWF8tcB_E.owc7Yk9PGgGCH7c0) Access Passcode: WbB7MU$C  
 
 ## Useful Links && Extra Repositiries
-- [Plutus Community Docs](https://docs.plutus-community.com/docs/lectures/Lecture6.html)
 - [Cardano Developer Portal](https://developers.cardano.org/?utm_source=Developers&utm_campaign=e6f14df50a-EMAIL_CAMPAIGN_2021_03_31_06_14_COPY_01&utm_medium=email&utm_term=0_c9c99d4ad3-e6f14df50a-77674502)
 - [Plutus Community Documentation](https://docs.plutus-community.com/)
 - [Smart Contracts Architecture](https://testnets.cardano.org/en/virtual-machines/kevm/about/iele_vm_architecture/)
