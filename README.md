@@ -92,12 +92,12 @@ Some **LINKS** that you can check, are listed below:
 - [Week 6](https://www.youtube.com/watch?v=24SHPHEc3zo&t=2s&ab_channel=LarsBr%C3%BCnjes)
 - [Week 7](https://www.youtube.com/watch?v=uwZ903Zd0DU&t=1s&ab_channel=LarsBr%C3%BCnjes)
 ## Q&A:
-- [Plutus Pioneers second cohort: Q and A with Lars #001](https://zoom.us/rec/share/QU7jcp8S0A-xlmXMIKlua5GoTpL0YwofDlnhSmzgZh1PeFSKqSn9YtzqIGmb6TvC.qZiLZ3thyTOy8dQ0) - Access Passcode: WbB7MU$C
-- [Plutus Pioneers second cohort: Q and A with Lars #002](https://zoom.us/rec/share/mfAfBcg8LfGstgdkvXYyP9BVUDiBzm1O_ED9QaTobbcuPzOXOZzGpGBndhr2CauU.bgV5nicKWogoT3Kj) - Access Passcode: WbB7MU$C
-- [Plutus Pioneers: Q and A with Lars #003](https://zoom.us/rec/share/7KKN1jsJIEe7hID4nxqo5cc59DQgucNTcXi7evD81cIsanLtJJfz4ymFYj7PW1PE.YajSv6SIKsCBRHKl) - Access Passcode: WbB7MU$C
+- [Plutus Pioneers second cohort: Q and A with Lars #001](https://zoom.us/rec/share/QU7jcp8S0A-xlmXMIKlua5GoTpL0YwofDlnhSmzgZh1PeFSKqSn9YtzqIGmb6TvC.qZiLZ3thyTOy8dQ0) - Access Passcode: //
+- [Plutus Pioneers second cohort: Q and A with Lars #002](https://zoom.us/rec/share/mfAfBcg8LfGstgdkvXYyP9BVUDiBzm1O_ED9QaTobbcuPzOXOZzGpGBndhr2CauU.bgV5nicKWogoT3Kj) - Access Passcode: //
+- [Plutus Pioneers: Q and A with Lars #003](https://zoom.us/rec/share/7KKN1jsJIEe7hID4nxqo5cc59DQgucNTcXi7evD81cIsanLtJJfz4ymFYj7PW1PE.YajSv6SIKsCBRHKl) - Access Passcode: //
 - [Plutus Pioneers: Q and A with Lars #004](https://zoom.us/rec/share/Gn20cMXHJbmdXG6R0PncZfs2feUuxP9KJjFGQ5oecCu-dvi2KSb-asX_LVSaKRHT.S2R1Eo2ulCeTWDUt
-  ) Access Passcode: WbB7MU$C
- - [Plutus Pioneers: Q and A with Lars #005](https://zoom.us/rec/share/4lASBU00my7lL5l0enCqZVWL7HBHJAI9x4_rJCZAoTaMz58c3C2lSgNTWF8tcB_E.owc7Yk9PGgGCH7c0) Access Passcode: WbB7MU$C  
+  ) Access Passcode: //
+ - [Plutus Pioneers: Q and A with Lars #005](https://zoom.us/rec/share/4lASBU00my7lL5l0enCqZVWL7HBHJAI9x4_rJCZAoTaMz58c3C2lSgNTWF8tcB_E.owc7Yk9PGgGCH7c0) Access Passcode: //  
 
 ## Useful Links && Extra Repositiries
 - [Cardano Developer Portal](https://developers.cardano.org/?utm_source=Developers&utm_campaign=e6f14df50a-EMAIL_CAMPAIGN_2021_03_31_06_14_COPY_01&utm_medium=email&utm_term=0_c9c99d4ad3-e6f14df50a-77674502)
