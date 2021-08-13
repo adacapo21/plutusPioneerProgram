@@ -7,23 +7,23 @@
 ### Credits to: [Sapiopool Cardano Community](https://sapiopool.com/)
 
 ### Contents
-###OVERVIEW
+### OVERVIEW
 A complete end-to-end example of an oracle
-- ####Oracle Core
+- #### Oracle Core
     - On Chain
     - Off Chain
         - Starting the oracle
         - Updating the oracle
-- ####Swap Validation
+- #### Swap Validation
     - offerSwap
     - findSwaps
     - retrieveSwaps
     - useSwaps
     - Contract bundle
-- ####Funds Module
-- ####Testing
+- #### Funds Module
+- #### Testing
     - Test in the Repl oracles and using the PAB
-- ####PAB (Plutus Application Backend)
+- #### PAB (Plutus Application Backend)
     - Oracle PAB
     - Oracle Client
     - Swap Client
@@ -52,17 +52,17 @@ One way would be to make the provider put down collateral; if it then fails to p
 
 Another way would be to combine multiple oracles, if all of them agree on the data (e.g. ADA-USD exchange rate) we'd trust this data; or we could take the average of all of them.
 
-###How do the creation of the oracle will happen?
+### How do the creation of the oracle will happen?
 
 For anything to happen on the blockchain, we need an UTxO. So our Oracle value (Datum) will sit at the script address of the Oracle.
 
-###Which is the main issue here?
+### Which is the main issue here?
 
 Our problem here is that Validation only happens when you consume something from a script address, not when you produce an output at a script. Meaning?
 - Which means that we can't prevent anybody from providing arbitrary outputs at the same Oracle script address.
 - We'll need a way to distinguish true UTxO Oracle output from the others sitting at the same script address.
 
-###Above Problem’s Solution:
+### Above Problem’s Solution:
 For this we can use NFT on the output. which are always unique in the whole blockchain.
 - An NFT can only exist once, there can only be one UTxO at the script address that holds the NFT.
 - A correct oracle output will have the correct data UTxO and identify the correct UTxO with an NFT.
@@ -75,7 +75,7 @@ In this example, as the value at the oracle is 1.75, then if someone offers 100 
 In addition to this, we need an incentive for the oracle to provide the data, because in additional to other costs for providing the data, at a minimum they would have to pay fees to create the UTxO.
 So, let’s say that the oracle provider determines a fee of 1 ADA that has to be paid each time the oracle is used.
 In this example, that would mean that the person wanting to by the ADA would have to pay 175 USD to the seller of the ADA, and 1 ADA to the oracle.
-###What will the transaction look like?
+### What will the transaction look like?
 ![](pictures/week6/week06__00004.png)
 First of all, the swap validation logic will need access to the current oracle value, which means that the oracle UTxO must be an input to the transaction.
 Then we have the oracle validation logic. In this case we want to use the oracle. So, let’s say we have a redeemer called use. Now, the oracle validator has to check several things.
@@ -96,7 +96,7 @@ We would have a transaction that uses an update redeemer. The validation logic i
 We insist that the NFT be present in the output, but we don’t say anything about other values. All the fees that got there by other transactions using this oracle data can be collected during the update transaction.
 
 
-###Summary
+### Summary
 To sum up, we represent the oracle/data feed by a UTxO and identify the correct UTxO with an NFT. The UTxO sits at the script address of the oracle, and its datum field it carries the current value of the oracle data. The oracle value is the datum of the UTxO.
 We support two operations.
 
@@ -120,8 +120,8 @@ An update transaction must:
 - The datum can change, and
 - the accumulated fees can be taken out.
 
-##ORACLE CORE
-###ONCHAIN
+## ORACLE CORE
+### ONCHAIN
 
 We see some common checks for use and update:
 We check if NFT exists exactly once in UTxO input and in output which spents ORACLE NFT. It also checks if the NFT is present to the output only once.
@@ -139,13 +139,13 @@ In use it confirms also that the fees has been paid by checking the outputs if t
 
 
 
-###OFFCHAIN
+### OFFCHAIN
 
-- ####Starting the oracle
-- ####Updating the oracle
+- #### Starting the oracle
+- #### Updating the oracle
 On-chain code that is not paired with some off-chain code. It is the responsibility of the person who wants to use the oracle to write the code to create the transaction with the redeemer.
 
-###START ORACLE
+### START ORACLE
 
 Things to remember here:
 - Params for Oracle, OracleParams
@@ -154,7 +154,7 @@ Things to remember here:
 - Mint NFT (only thing done in start)
   - Use forgeContract from Currency module
   
-####Check in REPL about forgeContract
+#### Check in REPL about forgeContract
 
 ```
 Prelude Week06.Oracle.Core> :t Plutus.Contracts.Currency.forgeContract
@@ -167,8 +167,8 @@ forgeContract can:
 and finally we do
 - Construction of Oracle Parameter Value
 
-###UPDATE ORACLE
-###The updateOracle function
+### UPDATE ORACLE
+### The updateOracle function
 
 Things to remember here:
 - If no UTxO found
@@ -176,7 +176,7 @@ Things to remember here:
 - If UTxO exists
   - value exist and we wish to update it
 
-###FindOracle function:
+### FindOracle function:
 - If it FAILS, means that we have just created the oracles and haven't created yet a UTxO with the Oracle Value
 - If it SUCCEEDS,  return a triple containing
   - the UTxO identifer (TxOutRef),
@@ -189,14 +189,14 @@ utxos <- Map.filter f <$> utxoAt (oracleAddress oracle)
 
 The first thing we do is to get all the UTxOs sitting at this address. But only one of these will be the one we are looking for - the one that contains the NFT. We do this by using the Map.filter function which takes a function as a parameter which, **in this case, returns True for the UTxO where the NFT is present.**
 
-###UpdateOracle function:
+### UpdateOracle function:
 - Look for findOracle
-- ###if it fails to find an oracle
+- ### if it fails to find an oracle
   - Oracle started but no Initial Value
   - submit a transaction that produces the initial value for the oracle.
   - Wait confirmation
   - Write a log message
-- ###If it succeeds
+- ### If it succeeds
   - Value exists
   - Need a reference to the UTxOs parts
   - Datum will be updated, so we don’t care about it for the moment.
@@ -209,7 +209,7 @@ The first thing we do is to get all the UTxOs sitting at this address. But only 
   - wait till transaction is confirmed
   - write log info
 
-###runOracle function:
+### runOracle function:
 
 - OracleSchema: startOracle and updateOracle into one contract.
 - Starts the oracle,
@@ -217,7 +217,7 @@ The first thing we do is to get all the UTxOs sitting at this address. But only 
 - if an integer is provided as a new value then it calls updateOracle with the new value
 - loops to allow others to update the oracle.
 
-###SWAP VALIDATION
+### SWAP VALIDATION
 The purpose of this contract is for someone to be able to deposit ADA and exchange it for a token, in our case a token that we will call USDT for US Dollar Token.
 The idea is that the price, the amount of USDT that will be required to be paid for the ADA, will be determined by the value of the oracle.
 
@@ -231,18 +231,18 @@ This is a parameterized validator with two parameters.
 
 We recall from the diagram, the swap transaction should have three inputs and three outputs.
 
-###Swap Transaction Inputs and Outputs
-####Inputs
+### Swap Transaction Inputs and Outputs
+#### Inputs
 - The oracle, to check the current exchange rate
 - The swap UTxO that holds the lovelace
 - The source of the buyer's funds
-####Outputs
+#### Outputs
 - The oracle, which we don't need to look at in the swap validation
 - The tokens for the seller
 - The lovelace for the buyer
 
 
-###Use cases:
+### Use cases:
 - If nobody does swap
   - If we don't support this case, the ADA could be locked there forever, if nobody ever decides to make the swap.
 
@@ -251,11 +251,11 @@ This second case is the condition we check in the validator. If the seller thems
 
 
 
-####Firstly, there must be two inputs  
+#### Firstly, there must be two inputs  
 the oracle and the swap UTxO. All additional inputs (the buyer's funds) must be public key inputs.
 Secondly, we want to check that the seller gets paid. → Just check if tx is signed by seller, txSignedBy info pkh
 
-###OracleInput:
+### OracleInput:
 - get the UTxO from the oracle.
 - get list of all inputs, then it compares with the addr parameter.
 - the list will be EMPTY or it will have the TxOut that matches the oracle UTxO.
@@ -263,27 +263,27 @@ Secondly, we want to check that the seller gets paid. → Just check if tx is si
 - if it EXISTS, returns the TxOut.
 
 
-###OracleValue:
+### OracleValue:
 - Check the actual EXCHANGE RATE
 - If it succeeds returns the value
-###MinPrice:
+### MinPrice:
 - Find out how many lovelaces are locked in swap.
 - CHECK IF INPUT, ASSIGN that number to lovelaceIn
 - use the price helper function to determine the price in USD tokens.
 
 
-###sellerPaid:
+### sellerPaid:
 - Checks if seller is get paid
 
 **Note**: We can use OracleAddress function inside the Plutus validator.
 
 
-###offerSwap
+### offerSwap
 This is for a seller who wants to offer a certain number of lovelace for exchange.
 - Takes Oracle to use and lovelaces seller wants to add
 - Pays amout of lovelaces to script (swap)
 
-###findSwaps
+### findSwaps
 - find all swaps that satisfy a given predicate
 - takes an oracle plus a predicate based on public key hashes
 - returns a list of triples of the UTxOs that satisfy the predicate.
@@ -291,7 +291,7 @@ This is for a seller who wants to offer a certain number of lovelace for exchang
 - g function: takes a key value pair representing the UTxO and returns a Maybe triple containing the items from the pair alongside a PubKeyHash.
 - **Function f** gets the public key hash from a UTxO, if it exists. After this, function g uses the guard function with the predicate function p that we passed in as an argument.
 
-###retrieveSwaps
+### retrieveSwaps
 - retrieveSwaps contract is for the seller if they want to change their mind and get their Ada back
 - use the findSwaps function
 - use findSwaps  with (== pkh) as the predicate, meaning that we want only those UTxOs sitting at the swap address that belong to the operator.
@@ -303,8 +303,8 @@ This is for a seller who wants to offer a certain number of lovelace for exchang
       - The function mconcat applies the Semigroup operator <> throughout the list in order to combine them.
       - We have the list of UTxOs in xs and we use list comprehension to turn this list into a list of pairs, and we then use Map.fromList to turn those pairs into a map, to which we then apply the unspentOutputs constraint.
 
-###useSwap:
-####Where the oracle actually is used.
+### useSwap:
+#### Where the oracle actually is used.
 - ownFunds:
   - add up all the money in our own wallet and returns a Value.
   - find out how many USD Tokens we have.
@@ -318,18 +318,18 @@ This is for a seller who wants to offer a certain number of lovelace for exchang
         - The function determines if there is a swap that is cheaper to or equal to the amount parameter.
         - construct a transaction. (let v)
         - create a Value representing the USD Tokens that we need to pay. (p)
-      - ####CONSTRAINTS:
+      - #### CONSTRAINTS:
         - First constraint is that we must consume the oracle as an input. And here we see the first use of the Use redeemer.
         - Second constraint is to consume the swap input, which just uses a Unit redeeemer.
         - Third constraint is to pay the oracle.
         - Final constraint is that we must pay the seller of the lovelace
-      - ####LOOKUPS:
+      - #### LOOKUPS:
         - we must provide the two UTxOs that we want to consume.
       - Submit transaction
       - Wait for confirmation
       - Log message
 
-###Contract bundle
+### Contract bundle
 A Bundle that contains ALL OF THEM (Offer, Retrieve, Use, Funds)
 
 The swap function recursively calls itself, offering again and again the same choice of endpoints.
@@ -338,7 +338,7 @@ The swap function recursively calls itself, offering again and again the same ch
 - **Funds**: It gives us the Value that we own. We then tell this value as a way of reporting to the outside world how much we have.
 - The **h** in each of the endpoints is an error handler. Each of the endpoints is wrapped inside the error handler, which just logs the error, but does not halt execution.
 
-###FUNDS MODULE
+### FUNDS MODULE
 - module that provides two contracts.
 - **ownFunds** is tasked with summing up all the Value in our own UTxOs.
   - Look up for the public key
@@ -351,7 +351,7 @@ The swap function recursively calls itself, offering again and again the same ch
   - calls itself
   - every block writes the value into the log
 
-###TESTING
+### TESTING
 
 Test in Repl:
 ```
@@ -379,7 +379,7 @@ At the end we see the Final Balances of the wallets:
 - **Wallet 5** was the one accepting the offers, and so has the additional Ada, but a reduced USD Token balance. Note that Wallet 5 has also had some fees deducted from its Ada balance.
 And finally, as well as the wallets, we see that the oracle is still going, and still owns the NFT. Note that, in this log, we don’t see the datum value.
 
-##PAB - PLUTUS APPLICATION BACKEND
+## PAB - PLUTUS APPLICATION BACKEND
 The component which manages Plutus Applications that run on users’ machines. It handles:
 1. Interactions with the node
 2. Interactions with the wallet backend
@@ -387,7 +387,7 @@ The component which manages Plutus Applications that run on users’ machines. I
 4. State management
 5. Tracking historical chain information
 
-###ORACLE PAB
+### ORACLE PAB
 
 - Start simulated wallet
 - Initializes all contracts
@@ -430,7 +430,7 @@ If we now stop the server and look in the directory, we will see the files where
 With this information - either obtained from the web server log, or from the files we have created, we could use any HTTP tool such as Curl or Postman to interact with the contracts when the web server is running. By default it runs on port 8080. We could also write code in any programming language we like to interact with the web server using the HTTP endpoints.
 We will now briefly look at the oracle-client and the swap-client. We won’t go into too much detail because we are not so interested in how to write a front end here.
 
-##ORACLE CLIENT
+## ORACLE CLIENT
 
 - Run by Oracle provider
 - Runs Oracle contract
@@ -452,7 +452,7 @@ where We can see the exchange rate that it has obtained from CoinMarketCap, and 
 ![](pictures/week6/8.png)
 
 
-##SWAP CLIENT
+## SWAP CLIENT
 
 - Run by clients which want to use swap contract
 - Offers via CLI different commands (offer, retrieve, use, funds)
@@ -482,7 +482,7 @@ Check the 2 wallet’s 2 && 3 Funds:
 
 We see that wallet 2 has lost some Ada, but gained some USD Tokens. The swap is complete, using the exchange rate as it is live, right now, which was injected into the mock blockchain via the oracle.
 
-####So now we have seen an end-to-end example of a Plutus dApp.
+#### So now we have seen an end-to-end example of a Plutus dApp.
 - It has a front end, it talks to the outside world, goes on the internet, gets information and interacts with Plutus smart contracts.
 - The smart contracts submit transactions to the blockchain where the validation logic kicks in and makes sure that everything follows the business rules.
 
