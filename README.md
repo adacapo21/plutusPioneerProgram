@@ -111,6 +111,16 @@ Some **LINKS** that you can check, are listed below:
 - [Plutus Lectures Notes](https://plutus-pioneer-program.readthedocs.io/en/latest/)
 - [Cardano Developers Reddit](https://www.reddit.com/r/CardanoDevelopers/)
 
+**Youtube:**
+- [Sapiopool](https://www.youtube.com/channel/UCcPH2RMsszRGJ2awvLdMKzQ)
+- [Marlowe](https://www.youtube.com/user/simonjohnthompson/videos)
+- [Haskell](https://www.youtube.com/playlist?list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV)
+- [Haskell and Crypto Mongolia 2020](https://www.youtube.com/watch?v=EoO76YCSTLo&list=PLJ3w5xyG4JWmBVIigNBytJhvSSfZZzfTm&ab_channel=AlejandroGarcia)
+- [Cardano Developer Portal](https://developers.cardano.org/)
+
+**Haskell**:
+- [Learn Haskell](http://learnyouahaskell.com/chapters)
+
 ## Extra Reads - Useful Papers
 - [Academic Papers](https://github.com/jonathondilworth/blockchain-notes/blob/main/Academic-Papers-List.md)
 - [Extended UTXO Model](https://iohk.io/en/research/library/papers/the-extended-utxo-model/)
@@ -138,13 +148,4 @@ blockchain programming paradigms](https://arxiv.org/pdf/2003.14271.pdf)
 **Participate/collaborate in Sapiopool Greek Community *Discord* channel here** :
 - [Discord Sapiopool](https://discord.com/invite/HRK9gGE9ax)
 
-**Youtube:**
-- [Sapiopool](https://www.youtube.com/channel/UCcPH2RMsszRGJ2awvLdMKzQ)
-- [Marlowe](https://www.youtube.com/user/simonjohnthompson/videos)
-- [Haskell](https://www.youtube.com/playlist?list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV)
-- [Haskell and Crypto Mongolia 2020](https://www.youtube.com/watch?v=EoO76YCSTLo&list=PLJ3w5xyG4JWmBVIigNBytJhvSSfZZzfTm&ab_channel=AlejandroGarcia)
-- [Cardano Developer Portal](https://developers.cardano.org/)
-
-**Haskell**:
-- [Learn Haskell](http://learnyouahaskell.com/chapters)
 
