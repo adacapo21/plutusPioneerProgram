@@ -108,6 +108,7 @@ Some **LINKS** that you can check, are listed below:
 - [Lectures Notes Cohort 1](https://plutus-pioneer-program.readthedocs.io/en/latest/index.html)
 - [Alonzo Walkthrough](https://plutus-pioneer-program.readthedocs.io/en/latest/alonzo.html)
 - [Plutus Repo from @mputz86](https://github.com/mputz86/plutus-personal-playground)
+- [Plutus Repo from @franleplant - Week 7 Solution Structure (Validator - Redeemer - Datum - GameChoice - Test)](https://github.com/franleplant/plutus-pioneer-program-fork/tree/rock-paper-scissors/code/week07/src)  
 - [Plutus Lectures Notes](https://plutus-pioneer-program.readthedocs.io/en/latest/)
 - [Cardano Developers Reddit](https://www.reddit.com/r/CardanoDevelopers/)
 
