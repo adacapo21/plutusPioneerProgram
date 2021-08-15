@@ -199,18 +199,18 @@ mkGameValidator game bsZero' bsOne' = mkValidator $ gameStateMachine game bsZero
       
 
  - #### Create a  [StateMachineClient](https://playground.plutus.iohkdev.io/tutorial/haddock/plutus-contract/html/Language-Plutus-Contract-StateMachine.html#v:mkStateMachineClient) 
-   - Interact from Wallet with state machine (Contract monad)
-	- Takes a StateMachineInstance [StateMachineClient ]
-		- scInstance :: StateMachineInstance s i : The instance of the state machine, defining the machine's transitions, its final states and its check function.
-	- StateMachine chooser [mkStateMachineClient]
-		- scChooser :: [OnChainState s i] -> Either SMContractError (OnChainState s i) :A function that chooses the relevant on-chain state, given a list of all potential on-chain states found at the contract address. Is the mechanism , from the off-chain code, for finding the UTxO that represents our state machine. In general there will be a list of UTxOs at the address of the state machine, and scChooser is a function that specifies which to pick.
+   - #### Interact from Wallet with state machine (Contract monad)
+	- #### Takes a StateMachineInstance [StateMachineClient ]
+		- **scInstance** :: StateMachineInstance s i : The instance of the state machine, defining the machine's transitions, its final states and its check function.
+	- #### StateMachine chooser [mkStateMachineClient]
+		- **scChooser**  :: [OnChainState s i] -> Either SMContractError (OnChainState s i): A function that chooses the relevant on-chain state, given a list of all potential on-chain states found at the contract address. Is the mechanism , from the off-chain code, for finding the UTxO that represents our state machine. In general there will be a list of UTxOs at the address of the state machine, and scChooser is a function that specifies which to pick.
 			  	  
 	- #### firstGame version
 		- #### Create a client with gameClient
-		- **runInitialise** :Start state machine with (with client, datum and value) && creates a UTxO at the state machine address.
+		- **runInitialise**: Start state machine with (with client, datum and value) && creates a UTxO at the state machine address.
 			-  takes the client as its first argument and then it needs the initial datum and the initial value for the UTxO sitting at that address.
 			- put the NFT there as well.
-		- Wait until play the deadline.
+		- Wait until play the **deadline**.
 		- #### Get the current UTxO by using getOnChainState: It returns (a Just [OnchainState](https://playground.plutus.iohkdev.io/tutorial/haddock/plutus-contract/html/Language-Plutus-Contract-StateMachine.html#t:OnChainState)) 
 			- #### if it finds the state machine 
 				- returns OnChainState Similar to what utxoMap returns, but typed
