@@ -193,7 +193,7 @@ typedGameValidator game = Scripts.mkTypedValidator @Gaming
     $$(PlutusTx.compile [|| wrap ||])
   where
     wrap = Scripts.wrapValidator @GameDatum @GameRedeemer
--- VALIDATOS
+-- VALIDATORS
 gameValidator :: Game -> Validator
 gameValidator = Scripts.validatorScript . typedGameValidator
 -- ADDRESS
@@ -331,7 +331,7 @@ secondGame sp = do
                 -- CONSTRAINTS
                 tx      = Constraints.mustSpendScriptOutput oref (Redeemer $ PlutusTx.toBuiltinData $ Play c) <> -- CONSUME EXISTING UTXO WITH Play redeemer with our choice
                           Constraints.mustPayToTheScript (GameDatum bs $ Just c) v                            <> -- CREATE A NEW UTXO WITH THE UPDATED DATUM
-                          Constraints.mustValidateIn (to now)       -- ,ust be done before Deadline passes
+                          Constraints.mustValidateIn (to now)       -- must be done before Deadline passes
             ledgerTx <- submitTxConstraintsWith @Gaming lookups tx
             let tid = txId ledgerTx         -- SUBMIT
             void $ awaitTxConfirmed tid     -- confirmation

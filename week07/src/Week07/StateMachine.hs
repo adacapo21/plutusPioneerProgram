@@ -66,7 +66,8 @@ PlutusTx.unstableMakeIsData ''GameChoice
 
 -- Used for state
 data GameDatum = GameDatum ByteString (Maybe GameChoice) | Finished -- ByteString: the hash that the first players submits
-    deriving Show                   -- Maybe GameChoice: the move of the second player, or Nothing, if they have not yet moved.
+    deriving Show                   -- Maybe GameChoice: the move of the second player,
+                                    -- or Nothing, if they have not yet moved.
 
 instance Eq GameDatum where
     {-# INLINABLE (==) #-}
@@ -92,7 +93,7 @@ gameDatum o f = do
     Datum d <- f dh
     PlutusTx.fromBuiltinData d
 
--- Implementation of the game
+-- Implementation of the Game
 -- Add a Final state to GameDatum
 -- transition functions derived from former validator function
     -- No more check for token required, already checked within StateMachine
@@ -175,10 +176,13 @@ gameValidator = Scripts.validatorScript . typedGameValidator
 gameAddress :: Game -> Ledger.Address
 gameAddress = scriptAddress . gameValidator
 
-gameClient :: Game -> StateMachineClient GameDatum GameRedeemer
+-- gameClient: is a StateMachine Client
+-- this is what we need to interact with our state machine from our wallet in the Contract monad.
+gameClient :: Game -> StateMachineClient GameDatum GameRedeemer --StateMachineClient:  define the machine's transitions, its final states and its check function.
 gameClient game = mkStateMachineClient $ StateMachineInstance (gameStateMachine' game) (typedGameValidator game)
---
+-- mkStateMachineClient: has the role of chooser here. It picks the UTxcO that contains our NFT.
 
+--
 data FirstParams = FirstParams
     { fpSecond         :: !PubKeyHash
     , fpStake          :: !Integer
@@ -188,8 +192,11 @@ data FirstParams = FirstParams
     , fpChoice         :: !GameChoice
     } deriving (Show, Generic, FromJSON, ToJSON, ToSchema)
 
+-- use Text as the error type.
 mapError' :: Contract w s SMContractError a -> Contract w s Text a
 mapError' = mapError $ pack . show
+-- pack: converts string into text
+-- show: will return a string
 
 waitUntilTimeHasPassed :: AsContractError e => POSIXTime -> Contract w s e ()
 waitUntilTimeHasPassed t = void $ awaitTime t >> waitNSlots 1
@@ -206,34 +213,44 @@ firstGame fp = do
             , gRevealDeadline = fpRevealDeadline fp
             , gToken          = tt
             }
-        client = gameClient game                -- Create a client with gameClient
+        -- Create & Get a client with gameClient
+        client = gameClient game
         v      = lovelaceValueOf (fpStake fp)
         c      = fpChoice fp
         bs     = sha2_256 $ fpNonce fp `concatenate` if c == Zero then bsZero else bsOne
-    -- Start state machine with runInitialise (with client, datum and value)
+    -- runIntialise : Start state machine with runInitialise (with client, datum and value) &&
+    -- creates a UTxO at the state machine address.
     void $ mapError' $ runInitialise client (GameDatum bs Nothing) v
     logInfo @String $ "made first move: " ++ show (fpChoice fp)
     tell $ Last $ Just tt
 
-    waitUntilTimeHasPassed $ fpPlayDeadline fp
+    waitUntilTimeHasPassed $ fpPlayDeadline fp  -- wait until the play deadline.
 
+    -- get the current UTxO by using getOnChainState, instead of findGameOutput
+    -- returns if it finds or not the state machine
     m <- mapError' $ getOnChainState client
-    case m of
+    case m of       -- we should never get Nothing for m.
         Nothing             -> throwError "game output not found"
-        Just ((o, _), _) -> case tyTxOutData o of
-
+        Just ((o, _), _) -> case tyTxOutData o of   -- Check the TypedScriptTxOut parameter, which we assign to o
+                                                    -- use o parameter to lookup the datum tyTxOutData.
             GameDatum _ Nothing -> do
+            -- if they haven't moved --> reclaim
+            -- runStep: which creates and submits a transaction that will transition the state machine.
                 logInfo @String "second player did not play"
                 void $ mapError' $ runStep client ClaimFirst
                 logInfo @String "first player reclaimed stake"
 
+            -- second case: 1st player revealed
+            -- use again runStep to transition the state Machine
             GameDatum _ (Just c') | c' == c -> do
                 logInfo @String "second player played and lost"
                 void $ mapError' $ runStep client $ Reveal $ fpNonce fp
                 logInfo @String "first player revealed and won"
 
+            -- ALL other cases: 2nd player wins
             _ -> logInfo @String "second player played and won"
 
+-- 2nd Player Contract (Similar to 1st)
 data SecondParams = SecondParams
     { spFirst          :: !PubKeyHash
     , spStake          :: !Integer
@@ -259,21 +276,24 @@ secondGame sp = do
     case m of
         Nothing          -> logInfo @String "no running game found"
         Just ((o, _), _) -> case tyTxOutData o of
+            -- CASE OF game haven't played yet. SHould be played.
             GameDatum _ Nothing -> do
                 logInfo @String "running game found"
                 -- use runStep to move state machine forward, just Redeemer
                 void $ mapError' $ runStep client $ Play $ spChoice sp
                 logInfo @String $ "made second move: " ++ show (spChoice sp)
 
-                waitUntilTimeHasPassed $ spRevealDeadline sp
+                waitUntilTimeHasPassed $ spRevealDeadline sp -- wait until the reveal deadline has passed
 
                 m' <- mapError' $ getOnChainState client
                 case m' of
-                    Nothing -> logInfo @String "first player won"
+                --  get the new state.
+                    Nothing -> logInfo @String "first player won" -- case: No State. 1st player won.
                     Just _  -> do
                         logInfo @String "first player didn't reveal"
                         void $ mapError' $ runStep client ClaimSecond
-                        logInfo @String "second player won"
+                        -- winnings are going to the redeemer ClaimSecond
+                        logInfo @String "second player won"     -- second player won if there is a state
 
             _ -> throwError "unexpected datum"
 
