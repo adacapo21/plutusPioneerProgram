@@ -212,7 +212,7 @@ mkGameValidator game bsZero' bsOne' = mkValidator $ gameStateMachine game bsZero
 			- put the NFT there as well.
 		- Wait until play the deadline.
 		- #### Get the current UTxO by using getOnChainState: It returns (a Just [OnchainState](https://playground.plutus.iohkdev.io/tutorial/haddock/plutus-contract/html/Language-Plutus-Contract-StateMachine.html#t:OnChainState)) 
-			- ####if it finds the state machine 
+			- #### if it finds the state machine 
 				- returns OnChainState Similar to what utxoMap returns, but typed
 				- Also provides Datum, i.e. no manual searching and checking
 			- #### OR it DOESN'T finds the state machine then returns
