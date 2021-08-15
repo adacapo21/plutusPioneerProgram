@@ -25,7 +25,7 @@ Implementation (without using State Machines) -  Week07.EvenOdd
 
 ### On chain code
 
-- ####Validator parameter Game and GameChoice s
+- #### Validator parameter Game and GameChoice s
     - UTxO with token used to track state of game
 
 - #### State of Game
@@ -155,22 +155,22 @@ From the initial state, there are two possible transitions. One where Bob plays,
 In the diagram, all the nodes correspond to states, and all the arrows correspond to transitions.
 
 In the blockchain,
-- the state machine will be represented by a UTxO sitting at the state machine address.
-- The state of the machine will be the datum of that UTxO.
-- A transition is a transaction
-    - that consumes the current state,
-    - using a redeemer that characterizes the transition, and then
-    - produces a new UTxO at the same address, where
-    - the datum now reflects the new state.
+- the **state machine will be represented by a UTxO** sitting at the state machine address.
+- #### The state of the machine will be the datum of that UTxO.
+- #### A transition is a transaction
+    - ##### that consumes the current state,
+    - **using a redeemer** that characterizes the transition, and then
+    - #### produces a new UTxO at the same address, where
+    - the **datum** now **reflects the new state.**
 
-By using State Machine approach, code will be much shorter.
-To write your contract as a state machine you need Two types
+By using State Machine approach, **code will be much shorter.**
+To write your contract as a state machine **you need Two types**
 - state and input for the state and
 - inputs of the machine .
     - s = state, Datum
     - i = input, Redeemer
 
-- ###Implementation of the game
+- ### Implementation of the game
 
     - Add a Final state to GameDatum
     - Now: transition functions derived from former validator function
