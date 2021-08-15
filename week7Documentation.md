@@ -244,7 +244,7 @@ mkGameValidator game bsZero' bsOne' = mkValidator $ gameStateMachine game bsZero
         - No need to replicate logic anymore.
         - By using State Machine, we define logic that can be used to On chain and Off Chain.
 
-###Testing State Machine Implementation
+### Testing State Machine Implementation
 
 ### Results will be similar
 Before run the test import the TestStateMachine.hs module
