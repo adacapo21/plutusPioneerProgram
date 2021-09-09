@@ -37,7 +37,7 @@ mkValidator () (a, b) _ = traceIfFalse "wrong redeemer" $ a == b -- FIXED!
 data Typed
 instance Scripts.ValidatorTypes Typed where
     type instance DatumType Typed = ()
-    type instance RedeemerType Typed = Integer
+    type instance RedeemerType Typed = (Bool, Bool)
 -- Implement the instance!
 
 typedValidator :: Scripts.TypedValidator Typed
@@ -46,19 +46,16 @@ typedValidator = Scripts.mkTypedValidator @Typed -- compile the validator. It ta
     $$(PlutusTx.compile [|| mkValidator ||])
     $$(PlutusTx.compile [|| wrap ||])
   where
-    wrap = Scripts.wrapValidator @() @Integer
-
-typedValidator :: Scripts.TypedValidator Typed
-typedValidator = Scripts.mkTypedValidator @Typed -- FIX ME!
+    wrap = Scripts.wrapValidator @() @(Bool, Bool)
 
 validator :: Validator
-validator = Scripts.validatorScript typedValidator -- FIX ME!
+validator = Scripts.validatorScript typedValidator -- FIXED!
 
 valHash :: Ledger.ValidatorHash
-valHash = Scripts.validatorHash typedValidator -- FIX ME!
+valHash = Scripts.validatorHash typedValidator -- FIXED!
 
 scrAddress :: Ledger.Address
-scrAddress = scriptAddress validator -- FIX ME!
+scrAddress = scriptAddress validator -- FIXED!
 
 type GiftSchema =
             Endpoint "give" Integer
