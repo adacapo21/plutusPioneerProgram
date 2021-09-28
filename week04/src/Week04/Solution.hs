@@ -9,7 +9,7 @@ module Week04.Homework where
 
 import Data.Aeson            (FromJSON, ToJSON)
 import Data.Functor          (void)
-import Data.Text             (Text)
+import Data.Text             (Text, unpack)
 import GHC.Generics          (Generic)
 import Ledger
 import Ledger.Ada            as Ada
